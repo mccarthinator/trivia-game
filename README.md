@@ -1,1 +1,1 @@
-# trivia-game
+# trivia-game for Northwestern Coding Bootcamp by Katie McCarthy
