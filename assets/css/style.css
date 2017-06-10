@@ -1,4 +1,15 @@
 /*testing that css stylesheet is linked*/
-.hello {
-	color: blue;
+ body { 
+	background-image: url(/assets/images/music-img1.jpg);
 }
+
+.topText {
+	color: black;
+	text-align: center;
+}
+
+.secondText {
+	text-align: center;
+	font-size: 18px;
+}
+
