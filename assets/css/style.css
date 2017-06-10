@@ -1,6 +1,9 @@
 
  body { 
 	background-image: url(../images/music-img1.jpg);
+	color: white;
+	text-align: center;
+	font-size: 22px;
 }
 
 .topText {

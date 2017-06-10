@@ -25,11 +25,35 @@
 <br>
 <br>
 
-<div class="text-center"><button class="btn btn-primary btn-sx" type="button">Start</button></div>
+<!-- start button -->
+<div class="row start">
+	<div id='app' class="col-md-12"> <button id='start' class="start-button">Start</button>
+	</div>
+</div>
 
+<!-- timer -->
+<div id="master">
+		<div class="row col-md-12">
+			 <div class="timer">Time is counting down<span id="time">2:00</span></div>
+		</div>
 
+<!-- questions -->
+		<div class="row col-md-12">
+				<div id='questions'> </div>
+		</div>
 
+<!-- submit answers button -->
+		<div class="row start"> <button onclick="check()" id='answers' class="start-button">Submit</button>
+		</div>												
 
+</div>
+
+<!-- displaying the user's results -->
+<div class='row' id="endGame">
+		<div class="col-md-6 score"><span>Yep!</span><div id="correct"></div></div>
+		
+		<div class="col-md-6 score"><span>Nope!</span><div id="wrong"></div></div>
+</div>
 
 
 
