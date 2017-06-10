@@ -1,15 +1,16 @@
-/*testing that css stylesheet is linked*/
+
  body { 
-	background-image: url(/assets/images/music-img1.jpg);
+	background-image: url(../images/music-img1.jpg);
 }
 
 .topText {
-	color: black;
+	color: white;
 	text-align: center;
 }
 
 .secondText {
 	text-align: center;
 	font-size: 18px;
+	color: white;
 }
 
