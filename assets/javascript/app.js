@@ -38,10 +38,10 @@ var timing;
 
 
 //begin with the start page 
-//HIDE DIV function
+//hide div function
 $( "#endGame" ).hide();
 
-//starts the function with unhiding the master div and starts the clock 
+//starts the function with unhiding the master div and starts timer
 $(function(){
 	    $("#master").hide();
 	    $("#start").on("click", function(){
@@ -50,38 +50,37 @@ $(function(){
 });	
 
 
-
+// the game starts when user clicks start
 $('#start').on('click', function() { 
-//Once the user clicks 'start', the game begins 
 			startGame();
 
-//timer starts counting down 
-			function startTimer(duration, display) {
-	    	var timer = duration, minutes, seconds;	
-	    	timing = setInterval(function () {
-	        minutes = parseInt(timer / 60, 10);
-	        seconds = parseInt(timer % 60, 10);
+//timer starts
+function startTimer(duration, display) {
+var timer = duration, minutes, seconds;	
+timing = setInterval(function () {
+minutes = parseInt(timer / 60, 10);
+seconds = parseInt(timer % 60, 10);
 
-	        seconds = seconds < 10 ? "0" + seconds : seconds;
+seconds = seconds < 10 ? "0" + seconds : seconds;
 
-	        display.text(minutes + ":" + seconds);
+display.text(minutes + ":" + seconds);
 
-	        if (--timer === 0) {
-	            check();
-	        }
-   		    }, 1000);
+if (--timer === 0) {
+    check();
+}
+    }, 1000);
 }
 
-		jQuery(function ($) {
-	    var twoMinute = 60 * 1.5,
-	        display = $('#time');
-	    startTimer(twoMinute, display);
-});
+jQuery(function ($) {
+var twoMinute = 60 * 1.5,
+    display = $('#time');
+startTimer(twoMinute, display);
+	});
 })
 
 
 
-//once start is clicked, this funciton will cycle through each question and append it to the div on the html page 
+//this funciton goes thru each question and appends it to the div on the html page 
 function startGame() {
 var j = 0;
 var questionString = '';
@@ -101,25 +100,24 @@ var questionString = '';
 
 
 
-//checks if the answer is correct on click and when timer goes down 
+//checks if the answer is correct on click 
 
 function check () { 
 
-//this stops the timer once the user clicks submit, otherwise it will add the results twice 	
-    		clearInterval(timing);
-
-//for(var i=0; i < questions.length; i++) 	
-			var q1 = ($('input[name="question0"]:checked').val()); 
-			var q2 = ($('input[name="question1"]:checked').val()); 
-			var q3 = ($('input[name="question2"]:checked').val()); 
-			var q4 = ($('input[name="question3"]:checked').val()); 
+//this stops the timer once the user clicks submit
+clearInterval(timing);
 
 
-			console.log(q1);
-			console.log(q2);
-			console.log(q3);
-			console.log(q4);
 
+	
+var q1 = ($('input[name="question0"]:checked').val()); 
+var q2 = ($('input[name="question1"]:checked').val()); 
+var q3 = ($('input[name="question2"]:checked').val()); 
+var q4 = ($('input[name="question3"]:checked').val()); 
+
+
+		
+// logic for adding right and wrong to the screen
 
 if (q1 === questions[0].correctAnswer) 
 										{ 
@@ -152,26 +150,13 @@ else {
 }
 
 
-
-		console.log(correct);
-		console.log(wrong);
-
-			document.getElementById("correct").innerHTML=correct;
-			document.getElementById("wrong").innerHTML=wrong;	
+document.getElementById("correct").innerHTML=correct;
+document.getElementById("wrong").innerHTML=wrong;	
 
 
 //hides the master div with the questions and shows the end game div with the results 
 $( "#master" ).hide();
 $( "#endGame" ).show();
 
-
 	
 }
-
-
-		console.log(questions[0].correctAnswer);
-		console.log(questions[1].correctAnswer);
-		console.log(questions[2].correctAnswer);
-		console.log(questions[3].correctAnswer);
-		console.log(questions[4].correctAnswer);
-		console.log(correct);
