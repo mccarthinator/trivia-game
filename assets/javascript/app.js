@@ -41,11 +41,11 @@ var timing;
 //hide div function
 $( "#endGame" ).hide();
 
-//starts the function with unhiding the master div and starts timer
+//starts the function with unhiding the timerAndQs div and starts timer
 $(function(){
-	    $("#master").hide();
+	    $("#timerAndQs").hide();
 	    $("#start").on("click", function(){
-	        $("#master, #start").toggle();
+	        $("#timerAndQs, #start").toggle();
 	});
 });	
 
@@ -154,9 +154,9 @@ document.getElementById("correct").innerHTML=correct;
 document.getElementById("wrong").innerHTML=wrong;	
 
 
-//hides the master div with the questions and shows the end game div with the results 
-$( "#master" ).hide();
+//hides the timerAndQs div with the questions and shows the end game div with the results 
+$( "#timerAndQs" ).hide();
 $( "#endGame" ).show();
 
-	
+	 
 }
